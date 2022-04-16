@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>SSN TestApp</title>
+		<!-- Import Styles -->
+		<link rel="stylesheet" href="./assets/styles.css" />
+		<!-- Import Vue.js -->
+		<script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+
+	<body>
+		<div id="app" class="mainTextClass">
+			<div class="nav-bar">
+				<ul class="nav-menu">
+					<li class="nav-item"><a href="">Home</a></li>
+					<li class="nav-item"><a href="">Something</a></li>
+					<li class="nav-item"><a href="">About</a></li>
+					<li class="cart">
+						<a href="" v-if="cartItemsGlobalCount > 1">Cart ({{ cartItemsGlobalCount }} Items)</a>
+						<a href="" v-else-if="cartItemsGlobalCount === 1">Cart ({{ cartItemsGlobalCount }} Item)</a>
+						<a href="" v-else>Cart (Empty)</a>
+					</li>
+				</ul>
+			</div>
+
+			<product-display :premium="premium" @add-to-cart="addCart" @remove-from-cart="removeCart"></product-display>
+		</div>
+		
+		<div class="widgets">
+			<div class="widget1">
+				<div>
+					<a href="https://www.myfxbook.com/members/Asphodel/trd-different-strategies/3247118"><img alt="widget" src="https://widgets.myfxbook.com/widgets/3247118/small.jpg"/></a>
+				</div>
+				<div>
+					<a href="https://gobymylink.com/ru/invest/pamm/436653/#pamm-return?partner_id=170002332">ПАММ 2019-го года</a>
+				</div>				
+			</div>
+			<div class="widget1">
+				<div>
+					<a href="https://www.myfxbook.com/members/Asphodel/trd-2-2-prime-risk/3350258"><img alt="widget" src="https://widgets.myfxbook.com/widgets/3350258/small.jpg"/></a>
+				</div>
+				<div>
+					Версия 2.2, Стандартный сет,риск 0.5, СЛ=10% (до 2021 года)
+				</div>				
+			</div>
+		</div>
+		
+		<div class="widgets">
+			<div class="widget1">
+				<div>
+					<a href="https://www.myfxbook.com/members/Asphodel/trd-2-3standart-r-0/7962207"><img alt="widget" src="https://widgets.myfxbook.com/widgets/7962207/large.jpg"/></a>
+				</div>
+				<div>
+					Версия 2.3, Стандартный сет, риск 0.5, СЛ=10%
+				</div>				
+			</div>
+			<div class="widget1">
+				<div>
+					<a href="https://www.myfxbook.com/members/Asphodel/trd-2-3trio-classic-r/7962251"><img alt="widget" src="https://widgets.myfxbook.com/widgets/7962251/large.jpg"/></a>
+				</div>
+				<div>
+					Версия 2.3, Сет трио-классика, риск 0.5, СЛ=50%
+				</div>				
+			</div>
+			<div class="widget1">
+				<div>
+					<a href="https://www.myfxbook.com/members/Asphodel/trd-2-3agr-trend-r/7962285"><img alt="widget" src="https://widgets.myfxbook.com/widgets/7962285/large.jpg"/></a>
+				</div>
+				<div>
+					Версия 2.3, Сет агрессивно-трендовый, риск 0.5, СЛ=50%
+				</div>				
+			</div>
+			<div class="widget1">
+				<div>
+					<a href="https://www.myfxbook.com/members/Asphodel/trd-2-3medium-cons-r/7962928"><img alt="widget" src="https://widgets.myfxbook.com/widgets/7962928/large.jpg"/></a>
+				</div>
+				<div>
+					Версия 2.3, Сет средняя консолидация, риск 0.5, СЛ отсутствует
+				</div>				
+			</div>
+		</div>
+
+		<!-- Import App -->
+		<script src="./main.js"></script>
+
+		<!-- Import Components -->
+		<script src="./components/ProductDisplay.js"></script>
+		<script src="./components/ProductDetails.js"></script>
+		<script src="./components/ReviewForm.js"></script>
+		<script src="./components/ReviewList.js"></script>
+
+		<!-- Mount App-->
+		<script>
+			const mountedApp = app.mount('#app')
+		</script>
+	</body>
+
+</html>
